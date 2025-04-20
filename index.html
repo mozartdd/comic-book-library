@@ -7,7 +7,96 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Main hero</th>
+                <th>Author</th>
+                <th>Year published</th>
+                <th>Universe</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>The X-Men #137 – The Fate of the Phoenix!</th>
+                <td>Superman</td>
+                <td>Chris Claremont and John Byrne</td>
+                <td>1980</td>
+                <td>Marvel</td>
+                <td>Not Read</td>
+            </tr>
+            <tr>
+                <th>Watchmen #4 – Watchmaker</th>
+                <td>Dr Manhattan</td>
+                <td>Alan Moore</td>
+                <td>1987</td>
+                <td>Dc</td>
+                <td>Not Read</td>
+            </tr>
+            <tr>
+                <th>The Amazing Spider-Man Vol 1 #33 – The Final Chapter</th>
+                <td>Spider-Man</td>
+                <td>Stan Lee</td>
+                <td>1966</td>
+                <td>Marvel</td>
+                <td>Not Read</td>
+            </tr>
+            <tr>
+                <th>All-Star Superman #10 – Neverending</th>
+                <td>Superman</td>
+                <td>Grant Morrison</td>
+                <td>2019</td>
+                <td>Dc</td>
+                <td>Not Read</td>
+            </tr>
+            <tr>
+                <th>Batman: The Killing Joke </th>
+                <td>Batman</td>
+                <td>Alan Moore</td>
+                <td>1980</td>
+                <td>Dc</td>
+                <td>Read</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button>Add new book</button>
+
+    <div class="add-comic">
+        <div>
+            <label for="title">Title of Comic-Book</label>
+            <input required id='title' type="text">
+        </div>
+        <div>
+            <label for="hero">Main hero</label>
+            <input required id="hero" type="text">
+        </div>
+        <div>
+            <label for="author">Author/s of novel</label>
+            <input required id="author" type="text">
+        </div>
+        <div>
+            <label for="year">Year of Publish</label>
+            <input required id="year" type="number" min="1900" max="2025">
+        </div>
+        <div>
+            <select required name="universe" id="universe">
+                <option value="" selected disabled>Marvel or DC?</option>
+                <option value="Marvel">Marvel</option>
+                <option value="DC">DC</option>
+            </select>
+        </div>
+        <div>
+            <select required name="have-read" id="status">
+                <option value="" selected disabled>Have you Red the comic?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

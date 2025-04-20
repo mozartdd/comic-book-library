@@ -1,1 +1,29 @@
+
 @import url(modern-normalize.css);
+
+
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 5vh;
+}
+button {
+    margin: auto;
+    display: block;
+}
+
+tr, th, td {
+    border: 1px solid;
+}
+
+.add-comic {
+    margin: auto;
+    width: 500px;
+    /* display: none; */
+}
+
+.add-comic > div > input, .add-comic > div > select {
+    width: 300px;
+    display: block;
+}
