@@ -1,7 +1,7 @@
-const comicBook = document.createElement('tr');
 
 const table = document.querySelector('table');
-const btn = document.querySelector('button');
+const btn = document.querySelector('#submit-btn');
+
 
 const title = document.querySelector('#title');
 const hero = document.querySelector('#hero');
@@ -15,7 +15,6 @@ const stat = document.querySelector('#status');
 
 // let userComicTitel = prompt('Enter comic title', 'man of steel')
 
-table.appendChild(comicBook);
 
 //Library which will hold comic books
 const myLibrary = [];
@@ -42,8 +41,12 @@ function addComicToLibrary (comicTitle, hero, author, year, universe, isRead) {
 
 //Displays comic book to screen
 function showComic(arr) {
+    //Dynamic creates tr el and appends it to table
+    const comicBook = document.createElement('tr');
+    table.appendChild(comicBook);
+
     for (let comic of arr) {
-        comicBook.innerHTML = `
+                comicBook.innerHTML = `
             <tr>
                 <th>${comic.comicTitle}</th>
                 <td>${comic.hero}</td>
@@ -55,12 +58,11 @@ function showComic(arr) {
     }
 }
 
-//Adds dynamic book to array based on user input
-
-btn.addEventListener('click', () => {
+//Adds dynamic comic book to array based on user input
+btn.addEventListener('click', (event) => {
     addComicToLibrary(title.value, hero.value, author.value, year.value, universe.value, stat.value);
     console.log(myLibrary, title.value);
     showComic(myLibrary);
+    event.preventDefault();
 })
-
 

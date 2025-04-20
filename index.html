@@ -62,40 +62,46 @@
         </tbody>
     </table>
 
-    <button>Add new book</button>
+    <button id="show-modul">Add new book</button>
 
-    <div class="add-comic">
-        <div>
-            <label for="title">Title of Comic-Book</label>
-            <input required id='title' type="text">
-        </div>
-        <div>
-            <label for="hero">Main hero</label>
-            <input required id="hero" type="text">
-        </div>
-        <div>
-            <label for="author">Author/s of novel</label>
-            <input required id="author" type="text">
-        </div>
-        <div>
-            <label for="year">Year of Publish</label>
-            <input required id="year" type="number" min="1900" max="2025">
-        </div>
-        <div>
-            <select required name="universe" id="universe">
-                <option value="" selected disabled>Marvel or DC?</option>
-                <option value="Marvel">Marvel</option>
-                <option value="DC">DC</option>
-            </select>
-        </div>
-        <div>
-            <select required name="have-read" id="status">
-                <option value="" selected disabled>Have you Red the comic?</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-        </div>
-    </div>
+    <dialog open>
+        <form action="dialog">
+            <div class="add-comic">
+                <div>
+                    <label for="title">Title of Comic-Book</label>
+                    <input required id='title' type="text">
+                </div>
+                <div>
+                    <label for="hero">Main hero</label>
+                    <input required id="hero" type="text">
+                </div>
+                <div>
+                    <label for="author">Author/s of novel</label>
+                    <input required id="author" type="text">
+                </div>
+                <div>
+                    <label for="year">Year of Publish</label>
+                    <input required id="year" type="number" min="1900" max="2025">
+                </div>
+                <div>
+                    <select required name="universe" id="universe">
+                        <option value="" selected disabled>Marvel or DC?</option>
+                        <option value="Marvel">Marvel</option>
+                        <option value="DC">DC</option>
+                    </select>
+                </div>
+                <div>
+                    <select required name="have-read" id="status">
+                        <option value="" selected disabled>Have you Red the comic?</option>
+                        <option value="Read">Yes</option>
+                        <option value="Not Read">No</option>
+                    </select>
+                </div>
+            </div>
+            <button id="submit-btn" type="submit">Add book</button>
+        </form>
+        <button id="close-module">Close module</button>
+    </dialog>
 
     <script src="script.js"></script>
 </body>
