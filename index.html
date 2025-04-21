@@ -1,128 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Comic Book Library</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <main>
+    <h1>📚 Comic Book Library</h1>
     <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Main hero</th>
-                <th>Author</th>
-                <th>Year published</th>
-                <th>Universe</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>The X-Men #137 – The Fate of the Phoenix!</th>
-                <td>Superman</td>
-                <td>Chris Claremont and John Byrne</td>
-                <td>1980</td>
-                <td>Marvel</td>
-                <td>Not Read
-                     <div class="remove">
-                        <img src="rubbish-bin-svgrepo-com.svg" alt="" width="24px">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>Watchmen #4 – Watchmaker</th>
-                <td>Dr Manhattan</td>
-                <td>Alan Moore</td>
-                <td>1987</td>
-                <td>Dc</td>
-                <td>Not Read
-                    <div class="remove">
-                        <img src="rubbish-bin-svgrepo-com.svg" alt="" width="24px">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>The Amazing Spider-Man Vol 1 #33 – The Final Chapter</th>
-                <td>Spider-Man</td>
-                <td>Stan Lee</td>
-                <td>1966</td>
-                <td>Marvel</td>
-                <td>Not Read
-                     <div class="remove">
-                        <img src="rubbish-bin-svgrepo-com.svg" alt="" width="24px">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>All-Star Superman #10 – Neverending</th>
-                <td>Superman</td>
-                <td>Grant Morrison</td>
-                <td>2019</td>
-                <td>Dc</td>
-                <td>Not Read
-                     <div class="remove">
-                        <img src="rubbish-bin-svgrepo-com.svg" alt="" width="24px">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>Batman: The Killing Joke </th>
-                <td>Batman</td>
-                <td>Alan Moore</td>
-                <td>1980</td>
-                <td>Dc</td>
-                <td>Read
-                     <div class="remove">
-                        <img src="rubbish-bin-svgrepo-com.svg" alt="" width="24px">
-                    </div>
-                </td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Hero</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>Universe</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
 
-    <button id="show-dialog">Add new book</button>
+    <button id="show-dialog">➕ Add New Comic</button>
 
     <dialog>
-        <form action="dialog">
-            <div class="add-comic">
-                <div>
-                    <label for="title">Title of Comic-Book</label>
-                    <input required id='title' type="text">
-                </div>
-                <div>
-                    <label for="hero">Main hero</label>
-                    <input required id="hero" type="text">
-                </div>
-                <div>
-                    <label for="author">Author/s of novel</label>
-                    <input required id="author" type="text">
-                </div>
-                <div>
-                    <label for="year">Year of Publish</label>
-                    <input required id="year" type="number" min="1900" max="2025">
-                </div>
-                <div>
-                    <select required name="universe" id="universe">
-                        <option value="" selected disabled>Marvel or DC?</option>
-                        <option value="Marvel">Marvel</option>
-                        <option value="DC">DC</option>
-                    </select>
-                </div>
-                <div>
-                    <select required name="have-read" id="status">
-                        <option value="" selected disabled>Have you Red the comic?</option>
-                        <option value="Read">Yes</option>
-                        <option value="Not Read">No</option>
-                    </select>
-                </div>
-            </div>
-            <button id="submit-btn">Add book</button>
-        </form>
-        <button id="close-module">X</button>
+      <h2>Add a Comic Book</h2>
+      <form>
+        <input id="title" placeholder="Title" required />
+        <input id="hero" placeholder="Main Hero" required />
+        <input id="author" placeholder="Author(s)" required />
+        <input id="year" placeholder="Year" type="number" required />
+        <input id="universe" placeholder="Universe (e.g. Marvel)" required />
+        <select id="status">
+          <option value="true">Read</option>
+          <option value="false" selected>Not Read</option>
+        </select>
+        <div class="dialog-buttons">
+          <button id="submit-btn" type="submit">Add Comic</button>
+          <button id="close-module" type="button">Cancel</button>
+        </div>
+      </form>
     </dialog>
-
-    <script src="script.js"></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
