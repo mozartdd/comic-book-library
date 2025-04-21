@@ -7,6 +7,7 @@ table {
     margin: auto;
     border-collapse: collapse;
     margin-top: 5vh;
+    position: relative;
 }
 button {
     margin: auto;
@@ -15,12 +16,36 @@ button {
 
 tr, th, td {
     border: 1px solid;
+    height: 2.5rem;
+}
+
+tr {
+    position: relative;
+}
+.remove {
+    position: absolute;
+    right: -28px;
+    bottom: 7px;
+}
+.remove:hover {
+    transform: scale(1.2);
 }
 
 .add-comic {
     margin: auto;
     width: 500px;
     /* display: none; */
+}
+#close-module {
+    position: absolute;
+    left: 94%;
+    bottom: 89.5%;
+
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 
 .add-comic > div > input, .add-comic > div > select {

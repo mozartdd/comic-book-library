@@ -1,7 +1,5 @@
 
-const table = document.querySelector('table');
-const btn = document.querySelector('#submit-btn');
-
+const tbody = document.querySelector('tbody');
 
 const title = document.querySelector('#title');
 const hero = document.querySelector('#hero');
@@ -9,16 +7,48 @@ const author = document.querySelector('#author');
 const year = document.querySelector('#year');
 const marvel = document.querySelector('#marvel');
 const dc = document.querySelector('#dc');
-const universe = document.querySelector('#universe')
+const universe = document.querySelector('#universe');
 const stat = document.querySelector('#status');
 
+const dialog = document.querySelector('dialog');
+const showDialogBtn = document.getElementById('show-dialog');
+const closeDialogBtn = document.getElementById('close-module');
+const subBtn = document.querySelector('#submit-btn');
 
-// let userComicTitel = prompt('Enter comic title', 'man of steel')
+//Function that removes comic book from table
+function removeComicBook() {
+    const removeComicBtn = document.querySelectorAll('.remove')
+    removeComicBtn.forEach((btn) => {
+        btn.addEventListener('click', () => {
+        btn.parentElement.parentElement.remove();
+    })
+})
+}
+removeComicBook()
 
+
+showDialogBtn.addEventListener('click', () => {
+    dialog.showModal();
+    title.value = '';
+    hero.value = '';
+    author.value = '';
+    year.value = '';
+    universe.value = '';
+    stat.value = '';
+})
+closeDialogBtn.addEventListener('click', () => {
+    dialog.close();
+    title.value = '';
+    hero.value = '';
+    author.value = '';
+    year.value = '';
+    universe.value = '';
+    stat.value = '';
+})
 
 //Library which will hold comic books
-const myLibrary = [];
-
+const myLibrary = []
+  
 
 //Function constructor to create obj with comic book data
 function Comic(comicTitle, hero, author, year, universe, isRead) {
@@ -32,37 +62,49 @@ function Comic(comicTitle, hero, author, year, universe, isRead) {
 }
 
 //Function to push comic book obj to library array
-function addComicToLibrary (comicTitle, hero, author, year, universe, isRead) {
-    let comic = new Comic(comicTitle, hero, author, year, universe, isRead);
+function addComicToLibrary (comicTitle, hero, author, year, universe, isRead, id) {
+    let comic = new Comic(comicTitle, hero, author, year, universe, isRead, id);
     return myLibrary.push(comic);
 }
-//Adds comic about iron man to myLibrary array
-// addComicToLibrary('iron man 2','iron man', 'stan lee', 1972, 'marvel', true);
 
 //Displays comic book to screen
 function showComic(arr) {
     //Dynamic creates tr el and appends it to table
     const comicBook = document.createElement('tr');
-    table.appendChild(comicBook);
+    // comicBook.className = 'huj'
+    tbody.appendChild(comicBook);
 
     for (let comic of arr) {
                 comicBook.innerHTML = `
             <tr>
-                <th>${comic.comicTitle}</th>
+                <th id='head-one'>${comic.comicTitle}</th>
                 <td>${comic.hero}</td>
                 <td>${comic.author}</td>
                 <td>${comic.year}</td>
                 <td>${comic.universe}</td>
-                <td>${comic.isRead}</td>
+                <td>
+                ${comic.isRead}
+                    <div class="remove">
+                        <img src="rubbish-bin-svgrepo-com.svg" alt="" width="24px">
+                    </div>
+                </td>
             </tr>`;
+        removeComicBook()
     }
 }
 
 //Adds dynamic comic book to array based on user input
-btn.addEventListener('click', (event) => {
-    addComicToLibrary(title.value, hero.value, author.value, year.value, universe.value, stat.value);
-    console.log(myLibrary, title.value);
-    showComic(myLibrary);
-    event.preventDefault();
+subBtn.addEventListener('click', (event) => {
+    if(!(title.value, hero.value, author.value, year.value, universe.value, stat.value)){
+
+    } else {
+        addComicToLibrary(title.value, hero.value, author.value, year.value, universe.value, stat.value);
+        showComic(myLibrary);
+        event.preventDefault();
+        dialog.close();
+        console.log(myLibrary);
+    }
 })
+
+
 
