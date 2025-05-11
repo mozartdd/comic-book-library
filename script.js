@@ -14,8 +14,10 @@ const showDialogBtn = document.getElementById('show-dialog');
 const closeDialogBtn = document.getElementById('close-module');
 const subBtn = document.querySelector('#submit-btn');
 
-// Comic Constructor
+// Comic Class
 class Comic{
+    static id = 0;
+    
     constructor(comicTitle, hero, author, year, universe, isRead) {
         this.comicTitle = comicTitle;
         this.hero = hero;
@@ -26,7 +28,6 @@ class Comic{
         this.id = `book${++Comic.id}`;
     }
 }
-Comic.id = 0;
 
 // Add comic to library
 function addComicToLibrary(comicTitle, hero, author, year, universe, isRead) {
