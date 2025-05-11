@@ -15,16 +15,16 @@ const closeDialogBtn = document.getElementById('close-module');
 const subBtn = document.querySelector('#submit-btn');
 
 // Comic Constructor
-function Comic(comicTitle, hero, author, year, universe, isRead) {
-    if (!new.target) throw new Error("Use 'new' to create Comic");
-
-    this.comicTitle = comicTitle;
-    this.hero = hero;
-    this.author = author;
-    this.year = year;
-    this.universe = universe;
-    this.isRead = isRead;
-    this.id = `book${++Comic.id}`;
+class Comic{
+    constructor(comicTitle, hero, author, year, universe, isRead) {
+        this.comicTitle = comicTitle;
+        this.hero = hero;
+        this.author = author;
+        this.year = year;
+        this.universe = universe;
+        this.isRead = isRead;
+        this.id = `book${++Comic.id}`;
+    }
 }
 Comic.id = 0;
 
