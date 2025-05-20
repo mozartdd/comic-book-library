@@ -17,11 +17,9 @@ A simple comic book library application built as part of the Odin Project curric
    `git clone <repo-url>`
 2. Open `index.html` in your browser (or run any setup if applicable)
 
-## Usage
-Explain how to add comics, view the library, and interact with the project.
 
 ## Project Status
-Completed / In progress / Planned features
+Completed
 
 ## Credits
 Built as part of the Odin Project curriculum.
